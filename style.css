@@ -8,7 +8,17 @@ div{
     align-content: space-between;
     justify-content: center;
 }
-#boton{
+.boton{
     background-color: black;
     color: aliceblue;
+}
+.blue{
+    width: 150px;
+    padding: 10px;
+    background-color: rgb(121, 202, 248);
+    margin: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-content: space-between;
+    justify-content: center;
 }
