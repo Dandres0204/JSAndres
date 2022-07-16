@@ -10,9 +10,11 @@ while (edad < 18) {
 let total_pagar = 0;
 let cant_objets = parseInt(prompt("Ingrese la cantidad de objetos:"));
 let limite = 1000;
+var nombreobjects;
+var carrito = [];
 
 for (let i=0; i<cant_objets; i++) {
-    let nombreobjects = prompt("Ingrese el Nombre del objeto:");
+    nombreobjects = prompt("Ingrese el Nombre del objeto:");
     let precio = parseFloat(prompt("Ingrese el Precio:"));
     total_pagar += precio;
 
@@ -20,6 +22,8 @@ for (let i=0; i<cant_objets; i++) {
     let mensaje = "Ingresaste: " + nombreobjects + " por $" + precio;
     alert(mensaje);
     console.log(mensaje);
+
+    carrito.push(nombreobjects);
 
     if (total_pagar > limite) {
         alert("Has superado el valor de compras máximas este mes!");
@@ -127,7 +131,18 @@ function myFunction() {
         alert(nombre + " " + " el total con iva sin intereses es de compras por alimentacion es de " + totalmasiva);
     }
 }
+let shop = document.createElement("h1");
 
+shop.innerHTML = "Tu carrito de compras es el siguiente:";
+document.body.append(shop);
+
+
+carrito.forEach(function(element){
+    let card = document.createElement('div')
+        card.textContent = element
+    
+    document.body.appendChild(card)
+ })
 
 alert()
 
