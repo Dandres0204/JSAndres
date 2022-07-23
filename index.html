@@ -9,7 +9,6 @@
 </head>
 <body>
     <h1>Compras mensuales</h1>
-    <script src="./index.js"></script>
     <label class="option">Compras:</label>
     <label for="Compras">Ropa</label>
     <input type="radio" id="gastosmensuales" name="Compras" value="Ropa">
@@ -17,5 +16,15 @@
     <input type="radio" name="Compras" value="Alimentación">
     <button type="button" id="boton" onclick="myFunction()">Click me</button>
     <p id="demo"></p>
+
+    <div class="overlay" id="overlay">
+        <div class="popup">
+          <div onclick="CloseModal()" class="CloseIcon">&#10006;</div>
+          <h3>Compras</h3>
+          <div id="popup2"></div>
+        </div>
+    </div>
+    <button onclick="OpenModal()">Ver Compras</button>
+    <script src="./index.js"></script>
 </body>
 </html>
