@@ -3,10 +3,9 @@ let edad = parseInt(prompt("Ingrese su Edad:"));
 
 const name = nombre
 
-while (edad < 18) {
-    alert(nombre + " " + "Usted es menor de edad, pida ayuda a un Adulto");
-    break
-}
+let ingreso = edad <= 18 ? true : false;
+    ingreso ? alert(nombre + " " + "Usted es menor de edad, pida ayuda a un Adulto"): alert("Bienvenido" + " " + nombre);
+
 let total_pagar = 0;
 let cant_objets = parseInt(prompt("Ingrese la cantidad de objetos:"));
 let limite = 1000;
@@ -24,10 +23,8 @@ for (let i=0; i<cant_objets; i++) {
 
     carrito.push(nombreobjects);
 
-    if (total_pagar > limite) {
-        alert("Has superado el valor de compras máximas este mes!");
-        break;
-    }
+total_pagar > limite && alert("Has superado el valor de compras máximas este mes!");
+
 }
 let mensaje = "El total a pagar sin iva es: $" + total_pagar;
 alert(mensaje);
@@ -72,11 +69,8 @@ if (obsequioelegido === ("viaje")) {
 
 let cuotas = prompt ("Ingrese el número de cuotas a diferir el valor")
 
-if (cuotas <= 12) {
-    alert("Has diferido el valor en cuotas que no superan un año, no tendrás intereses!")
-    } else {
-        alert("Has diferido el valor por un término mayor a un año, tus intereses son de 5% sobre el valor en cada cuota");
-    } 
+let credit = cuotas <= 12 ? true : false;
+credit ? alert("Has diferido el valor en cuotas que no superan un año, no tendrás intereses!"): alert("Has diferido el valor por un término mayor a un año, tus intereses son de 5% sobre el valor en cada cuota");
 
 let division = operaciones("division");
 const sininteres = division(totalmasiva,cuotas);
@@ -121,11 +115,10 @@ obsequios.includes(ultimoregalo);
 function myFunction() {
     document.getElementById("demo").innerHTML = "";
     const val = document.getElementById("gastosmensuales").checked;
-    console.log(val);
     if(val == true) {
-        alert(nombre + " " + " el total con iva sin intereses es de compras por Ropa es de " + totalmasiva);
+        Swal.fire(nombre + " " + " el total con iva sin intereses es de compras por Ropa es de " + totalmasiva);
     } else {
-        alert(nombre + " " + " el total con iva sin intereses es de compras por alimentacion es de " + totalmasiva);
+        Swal.fire(nombre + " " + " el total con iva sin intereses es de compras por alimentacion es de " + totalmasiva);
     }
 }
 let shop = document.createElement("h1");
@@ -147,6 +140,20 @@ for (var i=0; i< tarjeta.length; i++) {
         this.classList.toggle('blue'); 
       });
     }
+    Swal.fire({
+        title: 'Sus Compras han finalizado.',
+        width: 600,
+        padding: '3em',
+        color: '#716add',
+        background: '#fff url(/images/trees.png)',
+        backdrop: `
+          rgba(0,0,123,0.4)
+          url("/images/nyan-cat.gif")
+          left top
+          no-repeat
+        `
+      })
+
 // tarjeta emergeente
  function OpenModal() {
     let element = document.getElementById('overlay')
@@ -158,12 +165,12 @@ for (var i=0; i< tarjeta.length; i++) {
   }
   
   localStorage.setItem("compras", JSON.stringify(carrito));
-  let compras = localStorage.getItem("compras");
-  let items = JSON.parse(compras);
+  let compras =  JSON.parse(localStorage.getItem("compras"));
 
-  items.forEach(function(element){
+  compras.forEach(function(element){
   let pop = document.createElement('div')
     pop.setAttribute("class","pop");
     pop.textContent = element
     popup2.appendChild(pop)
 })
+
