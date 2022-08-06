@@ -73,4 +73,18 @@ body {
     align-content: space-between;
     justify-content: center;
   }
-  
+  img{
+    height: 70px;
+    width: 70px;
+    border-radius: 15px;
+    margin: 15px;
+  }
+  ul{
+    display: flex;
+    align-items: stretch;
+    text-justify: center;
+    text-decoration: none;
+    color: #0d2383;
+    justify-content: center;
+
+  }

@@ -1,0 +1,6 @@
+[   
+    {"nombrepremio": "Casa", "id": 1, "img": "https://img.freepik.com/vector-gratis/casa-dos-pisos_1308-16176.jpg" },
+    {"nombrepremio": "Carro", "id": 2, "img": "https://http2.mlstatic.com/D_NQ_NP_798862-MCO32807058398_112019-O.jpg" },
+    {"nombrepremio": "Viaje", "id": 3, "img": "https://www.bbva.com/wp-content/uploads/2017/12/billetes-avion-viajes-tarifas-comparacion-precios-ahorro-compra-vuelos-bbva-1024x683.jpg" },
+    {"nombrepremio": "Cena", "id": 4, "img": "https://assets.puzzlefactory.pl/puzzle/376/532/original.jpg" }
+]

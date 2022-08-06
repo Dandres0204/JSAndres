@@ -174,3 +174,17 @@ for (var i=0; i< tarjeta.length; i++) {
     popup2.appendChild(pop)
 })
 
+const lista = document.getElementById("lista");
+
+fetch("./data.json")
+.then(response => response.json())
+.then(data => {
+    data.forEach(regalo =>{
+        const li = document.createElement("li");
+        li.innerHTML = `
+        <p>${regalo.nombrepremio}</p>
+        <img src="${regalo.img}">
+        `;
+        lista.append(li);
+    })
+})
